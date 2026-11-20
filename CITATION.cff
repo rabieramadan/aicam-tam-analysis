@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this analysis code, please cite the associated paper."
+title: "GenAI Adoption in English Literature Education (TAM): Analysis Code"
+authors:
+  - family-names: "[Surname]"
+    given-names: "[Given name]"
+version: 1.0.0
+date-released: "2026-01-05"
+license: MIT
+repository-code: "https://github.com/rabieramadan/aicam-tam-analysis"
+abstract: >-
+  Reproducible analysis pipeline for a TAM-based study of Generative AI
+  adoption among undergraduate English Literature students at Sultan Qaboos
+  University: predictive modelling, clustering/profiling, association-rule
+  mining, and statistical testing.

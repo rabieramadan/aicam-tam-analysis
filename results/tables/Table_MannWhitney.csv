@@ -1,0 +1,14 @@
+Feature,U,p-value,Effect r,Significant
+4- Agree,7391.0,0.0,0.3807,Yes
+5- Strongly agree,7078.5,0.0,0.3223,Yes
+4- Agree.1,7072.5,0.0,0.3212,Yes
+Occasionally,4728.5,0.1247,0.1167,No
+Senior,4742.5,0.1218,0.114,No
+More than 6,5839.0,0.2288,0.0908,No
+Analyzing literary texts,5014.0,0.431,0.0633,No
+Comparative literature essays,5087.0,0.5013,0.0497,No
+Male,5117.5,0.4876,0.044,No
+Unnamed: 8,5153.5,0.5383,0.0373,No
+Familiar,5540.0,0.6496,0.0349,No
+Unnamed: 11,5450.0,0.7497,0.0181,No
+ChatGPT,5347.5,0.9907,0.001,No

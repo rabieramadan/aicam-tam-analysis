@@ -1,0 +1,11 @@
+antecedents,consequents,support,confidence,lift
+"Demographi_Female, Section 3:_4- Agree",In which t_Close reading and textual analysis,0.192,1.143,2.142
+"Demographi_Female, Section 3:_4- Agree",How often _Occasionally,0.159,0.943,2.132
+Section 3:_4- Agree,How often _Occasionally,0.221,0.92,2.08
+Section 3:_4- Agree,Section 2:_Familiar,0.183,0.76,2.027
+Section 3:_4- Agree,In which t_Close reading and textual analysis,0.255,1.06,1.986
+Section 3:_4- Agree,"Demographi_Female, In which t_Close reading and textual analysis",0.192,0.8,1.891
+Section 3:_4- Agree,How many l_3-Jan,0.192,0.8,1.87
+Section 3:_5- Strongly agree,"Demographi_Female, In which t_Close reading and textual analysis",0.159,0.733,1.733
+"Demographi_Female, Section 3:_5- Strongly agree",In which t_Close reading and textual analysis,0.159,0.892,1.671
+Section 3:_5- Strongly agree,In which t_Close reading and textual analysis,0.173,0.8,1.499

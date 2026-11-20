@@ -1,0 +1,12 @@
+# Core analysis stack (pinned to widely-available minimums; newer versions work)
+pandas>=1.5
+numpy>=1.23
+scipy>=1.10
+scikit-learn>=1.2
+matplotlib>=3.6
+seaborn>=0.12
+mlxtend>=0.22          # Apriori association-rule mining (generate_journal_assets.py)
+
+# Optional: enables Bayesian hyperparameter search in advanced_analysis.py.
+# The script degrades gracefully (grid fallback) if this is absent.
+scikit-optimize>=0.9

@@ -1,0 +1,5 @@
+Model,Accuracy,F1,Precision,Recall,ROC_AUC
+Random Forest,0.6429,0.5488,0.526,0.6429,
+SVM (RBF Kernel),0.6429,0.5846,0.5524,0.6429,
+Gradient Boosting,0.5952,0.5564,0.5625,0.5952,
+Logistic Regression,0.5476,0.5476,0.5476,0.5476,
