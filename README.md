@@ -90,6 +90,13 @@ scripts so it can gather their CSV outputs.
   falls back to the last column and prints a warning — check the console to
   confirm the intended target.
 
+## Authors
+
+- Dr. Aya Akkawi
+- Prof. Rabie A. Ramadan
+
+If you use this code, please cite it using [`CITATION.cff`](CITATION.cff).
+
 ## License
 
 MIT — see [`LICENSE`](LICENSE).
