@@ -1,31 +1,34 @@
 # Data
 
-The raw survey export is **not distributed** with this repository because it
-contains individual student responses (N = 209) collected under a
-confidentiality/anonymity commitment. To reproduce the analyses, place the
-survey file at the **repository root** with the exact name:
+`survey_anonymised.csv` is an **anonymised** version of the Google Forms
+survey export (N = 209 respondents, 46 items, four sections). The pipeline
+reads it directly, so no setup is needed. The raw export (`XLS data.csv`)
+is still **not distributed** and is git-ignored.
 
-```
-XLS data.csv
-```
+## Format
 
-All scripts resolve the data via a relative path (`../XLS data.csv` from
-`src/`, `../../XLS data.csv` from `src/first/`), so no code changes are needed
-once the file is in place.
+- One header row (read with `header=0`), one row per respondent.
+- All 46 columns are kept in their original order, because several scripts
+  select columns by position (for example `TARGET_IDX = 32` in
+  `src/first/predict_engagement.py`).
 
-## Expected format
+## Anonymisation applied
 
-- CSV export of the Google Forms questionnaire (four sections; 46 items).
-- **The header spans two rows**; the scripts read with `header=1`
-  (i.e. the *second* row holds the working column labels). Preserve this when
-  re-exporting.
-- One row per respondent.
+| Column(s) | Change |
+| --- | --- |
+| `Timestamp` (col 0) | Blanked |
+| The four "If other, please specify…" free-text columns (cols 5, 8, 11, 27) | Blanked |
+| `Year of Study` (col 2) | Anything other than Freshman / Sophomore / Junior / Senior became `Other` |
+| Other single-choice columns | Free-text answers given instead of a listed option (not a Likert value like `4- Agree` and occurring fewer than 3 times) became `Other` |
+| Select-all-that-apply columns (cols 4, 7, 10, 26) | Options chosen fewer than 5 times (typed-in "other" entries) became `Other` |
 
-## Key columns referenced by the scripts (matched by label substring)
+All Likert ratings and standard multiple-choice answers are unchanged.
+
+## Key columns referenced by the scripts
 
 | Purpose | Script | Column identified by |
 | --- | --- | --- |
-| Engagement / perceived academic impact (binarised 4–5 = High) | `first/predict_engagement.py` | contains `impact` |
+| Engagement / perceived academic impact (binarised 4–5 = High) | `first/predict_engagement.py` | column index 32 |
 | Training-workshop attendance (classification target) | `predictive_analysis.py` | `attending workshops or training sessions` |
 | Ethical concern — academic integrity (regression target) | `predict_ethical_concerns.py` | `academic integrity` |
 | AI familiarity (PEOU proxy) / frequency of use | multiple | contains `familiar` / `frequency` |

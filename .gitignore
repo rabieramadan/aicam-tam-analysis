@@ -3,6 +3,8 @@ XLS data.csv
 *.xlsx
 data/*.csv
 !data/README.md
+# Anonymised release is tracked (see data/README.md)
+!data/survey_anonymised.csv
 
 # Python
 __pycache__/

@@ -34,7 +34,7 @@ def load_data(filepath):
         headers = []
         for i in range(df_raw.shape[1]):
             # Combine the first 3 rows to form a comprehensive header name
-            col_text = " ".join(df_raw.iloc[0:2, i].dropna().astype(str))
+            col_text = " ".join(df_raw.iloc[0:1, i].dropna().astype(str))
             # Clean up the header a bit
             col_text = re.sub(r'\(.*?\)', '', col_text).strip()
             if not col_text:
@@ -52,7 +52,7 @@ def load_data(filepath):
                 seen[h] = 0
                 final_headers.append(h)
                 
-        df = pd.read_csv(filepath, header=1) # Load actual data
+        df = pd.read_csv(filepath, header=0) # Load actual data
         df.columns = final_headers
         return df
     except Exception as e:
@@ -230,7 +230,7 @@ def generate_table4_apriori(df, output_dir):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(script_dir, "..", "XLS data.csv")
+    data_path = os.path.join(script_dir, "..", "data", "survey_anonymised.csv")
     
     df = load_data(data_path)
     if df is None: return

@@ -4,13 +4,13 @@
 Usage:
     python run_all.py
 
-Requires `XLS data.csv` at the repository root (see data/README.md).
+Reads the anonymised survey at `data/survey_anonymised.csv` (see data/README.md).
 Outputs (figures/tables) are written to each script's working directory.
 """
 import subprocess, sys, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(HERE, "XLS data.csv")
+DATA = os.path.join(HERE, "data", "survey_anonymised.csv")
 
 PIPELINE = [
     "src/predictive_analysis.py",
@@ -24,7 +24,7 @@ PIPELINE = [
 
 def main():
     if not os.path.exists(DATA):
-        sys.exit("ERROR: 'XLS data.csv' not found at repo root. See data/README.md.")
+        sys.exit("ERROR: data/survey_anonymised.csv not found. See data/README.md.")
     for rel in PIPELINE:
         path = os.path.join(HERE, rel)
         print(f"\n{'='*60}\nRunning {rel}\n{'='*60}")

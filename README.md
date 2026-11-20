@@ -6,9 +6,10 @@ Sultan Qaboos University (N = 209). The code covers supervised prediction,
 unsupervised student profiling, association-rule mining, and non-parametric
 statistical testing, and regenerates the figures and tables used in the paper.
 
-> **Data notice.** The raw survey file (`XLS data.csv`) is confidential and is
-> **not** included. Place your own copy at the repository root to reproduce the
-> results — see [`data/README.md`](data/README.md).
+> **Data.** An anonymised copy of the survey (N = 209) is included at
+> [`data/survey_anonymised.csv`](data/survey_anonymised.csv). The raw export
+> (`XLS data.csv`) is confidential and not distributed. See
+> [`data/README.md`](data/README.md) for what was anonymised.
 
 ## Repository layout
 
@@ -24,7 +25,8 @@ statistical testing, and regenerates the figures and tables used in the paper.
 │   └── first/
 │       └── predict_engagement.py    # "Idea 1": predicts perceived academic impact (High/Low)
 ├── data/
-│   └── README.md                    # Data schema + placement instructions (data itself is git-ignored)
+│   ├── survey_anonymised.csv        # Anonymised survey responses (N = 209)
+│   └── README.md                    # Data schema + anonymisation notes
 ├── results/
 │   ├── figures/                     # Example output figures (PNG)
 │   └── tables/                      # Example output tables (CSV)
@@ -49,8 +51,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Put the survey export at the repo root as `XLS data.csv` (two-row header;
-   scripts read with `header=1`). See [`data/README.md`](data/README.md).
+1. The anonymised data is already in `data/`. No setup is needed.
 2. Run everything:
 
    ```bash

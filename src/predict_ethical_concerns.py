@@ -19,7 +19,7 @@ def clean_likert(val):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(script_dir, "..", "XLS data.csv")
+    data_path = os.path.join(script_dir, "..", "data", "survey_anonymised.csv")
 
     print("Loading data...")
     try:
@@ -31,7 +31,7 @@ def main():
     # Identify the target column for Ethical Concerns (Academic integrity)
     target_col_idx = -1
     for i in range(df_raw.shape[1]):
-        col_text = " ".join(df_raw.iloc[0:5, i].dropna().astype(str))
+        col_text = " ".join(df_raw.iloc[0:1, i].dropna().astype(str))
         if "Academic integrity" in col_text and "plagiarism" in col_text:
             target_col_idx = i
             break
@@ -40,7 +40,7 @@ def main():
         print("Target column not found.")
         return
 
-    df = pd.read_csv(data_path, header=1)
+    df = pd.read_csv(data_path, header=0)
     target_col = df.columns[target_col_idx]
 
     print(f"Target Column: {target_col}")

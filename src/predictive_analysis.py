@@ -14,7 +14,7 @@ import os
 def load_and_prepare_data(filepath):
     print(f"Loading data from {filepath}...")
     try:
-        df = pd.read_csv(filepath, header=1)
+        df = pd.read_csv(filepath, header=0)
     except Exception as e:
         print(f"Error loading CSV: {e}")
         return None, None
@@ -63,7 +63,7 @@ def evaluate_model(model, X_test, y_test, classes, model_name):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path  = os.path.join(script_dir, "..", "XLS data.csv")
+    data_path  = os.path.join(script_dir, "..", "data", "survey_anonymised.csv")
     if not os.path.exists(data_path):
         print(f"Data file not found: {data_path}")
         return

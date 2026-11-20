@@ -47,8 +47,8 @@ def clean_likert(val):
 
 
 def load_data(script_dir):
-    data_path = os.path.join(script_dir, "..", "XLS data.csv")
-    df = pd.read_csv(data_path, header=1)
+    data_path = os.path.join(script_dir, "..", "data", "survey_anonymised.csv")
+    df = pd.read_csv(data_path, header=0)
     return df
 
 

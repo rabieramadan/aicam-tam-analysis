@@ -36,7 +36,7 @@ from scipy import stats
 
 # ── Paths ──────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH  = os.path.join(SCRIPT_DIR, "..", "..", "XLS data.csv")
+DATA_PATH  = os.path.join(SCRIPT_DIR, "..", "..", "data", "survey_anonymised.csv")
 
 def clean_likert(val):
     if pd.isna(val): return np.nan
@@ -51,7 +51,7 @@ def save(fig, name):
 
 # ── 1. Load ─────────────────────────────────────────────
 print("Loading data …")
-df = pd.read_csv(DATA_PATH, header=1)
+df = pd.read_csv(DATA_PATH, header=0)
 print(f"  {len(df)} rows × {len(df.columns)} cols")
 
 # ── 2. Define Target and Features by column index ──────
@@ -142,7 +142,7 @@ for idx, (name, model) in enumerate(MODELS.items()):
 # ── 6. ROC plot ──────────────────────────────────────────
 ax_roc.plot([0,1],[0,1],"k--", lw=1, alpha=0.5, label="Random Chance")
 ax_roc.set(xlabel="False Positive Rate", ylabel="True Positive Rate",
-           title="ROC Curves — Predicting High vs Low Academic Impact of AI (N=208)")
+           title=f"ROC Curves — Predicting High vs Low Academic Impact of AI (N={len(df)})")
 ax_roc.legend(fontsize=9, loc="lower right"); ax_roc.grid(True, alpha=0.3)
 save(fig_roc, "Figure_ROC.png")
 
